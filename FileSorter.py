@@ -5,7 +5,7 @@ import shutil
 from collections import defaultdict
 
 from DareDoesRumps import DareDoesRumps
-from utils import expand_path, path_to_folder, filetype
+from utils import path_to_folder, filetype
 
 app_name = "FileSorter"
 app_title = "FS"
