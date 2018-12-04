@@ -2,6 +2,8 @@
 
 A rumps tool to keep folders and files organized.
 
+**CURRENTLY REQUIRES UNAVAILABLE RUMPS CODE - WILL BE MERGED SOON**
+
 ---
 
 
