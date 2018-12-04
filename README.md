@@ -1,40 +1,18 @@
-# GitReviewing
+# FileSorter
 
-A rumps tool to keep up to date with Pull Requests.
-
----
-
-## Getting An Access Token
-
-[Generate a personal access token](https://github.com/settings/tokens)  with all permissions for repo to for all repos, or just `public_repo` for public repos, and `read:user`.
-
-This token can be input into GitReviewing through the Menubar
+A rumps tool to keep folders and files organized.
 
 ---
 
-## Making a cipher
 
-For "Security" (aka not plain-text), GitReviewing uses a cipher key stored as a compiled pyc file.
+Comes with default folders and extension groups!
 
-If you have a better solution, fork and submit a pull request.
+## How It Works
 
-To generate a cipher, open a python shell and execute the following:
-```python
-from cryptography.fernet import Fernet
-Fernet.generate_key()
-```
-which will generate a key such as: `b's7TbWhTLwscwOa02cEZD0IgTKzWil6Wo2yz54hDaAEo='` (Don't use this one!)
+Folders are established by providing the human-readable name of the folder, for the menu bar, and the path to the folder, including support for `~`
 
-To save the cipher, create a file at the root called `cipher.py` with the contents
-```python
-cipher = b's7TbWhTLwscwOa02cEZD0IgTKzWil6Wo2yz54hDaAEo='
-```
+Files are found in these folders when being sorted by their extension.
 
-Then compile it to a `.pyc` file with the command 
-```
-python -m py_compile cipher.py
-```  
+Extensions go into a category with a human-readable name, this will become the folder name the extensions are sorted into.
 
-This will put the file in a folder called `__pycache__`, move the file from there to the root of the repository, and change the name to `cipher.pyc`.
-
-Then delete `cipher.py`
+Extensions should **not** start with a `.`, and will be forced into lowercase for storage and comparison, but not during movement.
